@@ -1,6 +1,7 @@
 # colors
 
-TODO: Write a description here
+This is a library focused on working with colors and gradients. At this stage
+it allows you to create an RGB gradient.
 
 ## Installation
 
@@ -9,20 +10,28 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   colors:
-    github: your-github-user/colors
+    github: dscottboggs/colors
 ```
 
 ## Usage
 
 ```crystal
 require "colors"
-```
 
-TODO: Write usage instructions here
+include Colors
+
+red = Color.red
+green = Color.new red: 0, green: 0xFF, blue: 0
+gray = Color.gray 0x55
+
+color_based_on_percent = Gradient.new :red, :green, 100
+
+color_based_on_percent[50] # => Color red: 127, green: 127, blue: 0
+```
 
 ## Development
 
-TODO: Write development instructions here
+It's crystal, just check out the repo.
 
 ## Contributing
 
@@ -34,4 +43,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [your-github-user](https://github.com/your-github-user) D. Scott Boggs - creator, maintainer
+- [dscottboggs](https://github.com/dscottboggs) D. Scott Boggs - creator, maintainer
