@@ -26,7 +26,8 @@ gray = Color.gray 0x55
 
 color_based_on_percent = Gradient.new :red, :green, 100
 
-color_based_on_percent[50] # => Color red: 127, green: 127, blue: 0
+color = color_based_on_percent[50] # => Color red: 127, green: 127, blue: 0
+color.to_s                         # => "#7F7F00"
 ```
 
 ## Development
