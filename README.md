@@ -1,4 +1,4 @@
-# colors
+# colors and gradients
 
 This is a library focused on working with colors and gradients. At this stage
 it allows you to create an RGB gradient.
@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   colors:
-    github: dscottboggs/colors
+    github: dscottboggs/colors-and-gradients
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ It's crystal, just check out the repo.
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/colors/fork>)
+1. Fork it (<https://github.com/dscottboggs/colors/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
