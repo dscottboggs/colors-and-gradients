@@ -43,11 +43,13 @@ module Colors
         when :green
           Color.new(
             red: ColorValue.new(low_value),
-            green: ColorValue.new(high_value)
+            green: ColorValue.new(high_value),
+            blue: ColorValue.new(from)
           )
         else # :blue
           Color.new(
             red: ColorValue.new(low_value),
+            green: ColorValue.new( from ),
             blue: ColorValue.new(high_value)
           )
         end
@@ -56,10 +58,12 @@ module Colors
         when :red
           Color.new(
             red: ColorValue.new(high_value),
-            green: ColorValue.new(low_value)
+            green: ColorValue.new(low_value),
+            blue: ColorValue.new(from)
           )
         else # :blue
           Color.new(
+            red: ColorValue.new(from),
             green: ColorValue.new(low_value),
             blue: ColorValue.new(high_value)
           )
@@ -69,10 +73,12 @@ module Colors
         when :red
           Color.new(
             red: ColorValue.new(high_value),
+            green: ColorValue.new(from),
             blue: ColorValue.new(low_value)
           )
         else # :green
           Color.new(
+            red: ColorValue.new(from),
             green: ColorValue.new(high_value),
             blue: ColorValue.new(low_value)
           )

@@ -39,14 +39,14 @@ module Colors
         grad.low_color.should eq :red
         grad.high_color.should eq :green
         grad[50].red.to_i.should be_close expected: color[:mid], delta: 2
-        grad[50].blue.should eq 0
+        grad[50].blue.should eq color[:min]
         grad[50].green.to_i.should be_close expected: color[:mid], delta: 2
       end
       it "Gets the right value at 1:4 with min  #{ color[:min] } and max  #{ color[:max] }" do
         grad.low_color.should eq :red
         grad.high_color.should eq :green
         grad[25].red.to_i.should be_close expected: color[:threequarter], delta: 2
-        grad[25].blue.should eq 0
+        grad[25].blue.should eq color[:min]
         grad[25].green.to_i.should be_close expected: color[:quarter], delta: 2
       end
       it "Gets the right value at 1:1 with min  #{ color[:min] } and max  #{ color[:max] }" do
@@ -71,20 +71,20 @@ module Colors
         grad[75].blue.should eq color[:low]
       end
     end
-    grad = Gradient.new
+    test_grad = Gradient.new
     it "iterates over the whole gradient" do
       counter = 0
-      grad.each { counter+=1 }
-      counter.should eq grad.max
+      test_grad.each { counter+=1 }
+      counter.should eq test_grad.max
     end
     it "iterates with an index" do
       counter = 0
-      grad.each_with_index do |c, i|
-        grad[i].red.should eq c.red
-        grad[i].green.should eq c.green
+      test_grad.each_with_index do |c, i|
+        test_grad[i].red.should eq c.red
+        test_grad[i].green.should eq c.green
         counter += 1
       end
-      counter.should eq grad.max
+      counter.should eq test_grad.max
     end
   end
 end
