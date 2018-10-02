@@ -6,20 +6,19 @@ module Colors
     property green
     property blue
 
-    def initialize(red : UInt8 | Int, green : UInt8 | Int, blue : UInt8 | Int)
+    def initialize(
+      red : UInt8 | Int | ColorValue = ColorValue.off,
+      green : UInt8 | Int | ColorValue = ColorValue.off,
+      blue : UInt8 | Int | ColorValue = ColorValue.off
+    )
       @red = ColorValue.new red
       @green = ColorValue.new green
       @blue = ColorValue.new blue
     end
 
-    def initialize(
-      @red : ColorValue = ColorValue.off,
-      @green : ColorValue = ColorValue.off,
-      @blue : ColorValue = ColorValue.off
-    )
-    end
-
-    def self.from_s(string : String)
+    # Accepts a string like "#RRGGBB", returns a new Color. Raises an exception
+    # if the string is not in that format.
+    def self.from_s(string : String) : Color
       unless string[0] == '#'
         raise Exception.new(
           "invalid character in color string at position 0: #{string[0]}"

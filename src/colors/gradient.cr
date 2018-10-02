@@ -8,18 +8,25 @@ module Colors
     property range
 
     def initialize(
-      @low_color : Symbol = :red, @high_color : Symbol = :green, @max = 100
+      @low_color : Symbol = :red,
+      @high_color : Symbol = :green,
+      @max = 100
     )
       check_colors
       @min = 0
       @range = (@min...@max)
     end
 
-    def initialize(@low_color : Color, @high_color : Color, @range : Range(Int, Int))
+    def initialize(
+      @range : Range(Int, Int),
+      @low_color : Symbol = :red,
+      @high_color : Symbol = :green,
+    )
       check_colors
       @min = @range.begin
       @max = @range.end
     end
+
     def [](val) : Color
       value = val.to_f
       high_value = ((value - min) * 0xFF).to_f / (@max - @min).to_f
