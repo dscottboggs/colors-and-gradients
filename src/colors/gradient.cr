@@ -5,22 +5,28 @@ module Colors
     property max
     getter low_color
     getter high_color
-    property range
+    property range : Range(Int32|Int64, Int32|Int64)?
+    property from
+    property upto
 
     def initialize(
       @low_color : Symbol = :red,
       @high_color : Symbol = :green,
-      @max = 100
+      @from : ColorValue | UInt8 = ColorValue.off,
+      @upto : ColorValue | UInt8 = ColorValue.full,
+      @max = 100,
     )
       check_colors
       @min = 0
-      @range = (@min...@max)
+      range = (min...max)
     end
 
     def initialize(
-      @range : Range(Int, Int),
-      @low_color : Symbol = :red,
-      @high_color : Symbol = :green,
+      @range : Range(Int32|Int64, Int32|Int64),
+      @low_color : Symbol=:red,
+      @high_color : Symbol=:green,
+      @from : ColorValue | UInt8 = ColorValue.off,
+      @upto : ColorValue | UInt8 = ColorValue.full,
     )
       check_colors
       @min = @range.begin
@@ -29,8 +35,8 @@ module Colors
 
     def [](val) : Color
       value = val.to_f
-      high_value = ((value - min) * 0xFF).to_f / (@max - @min).to_f
-      low_value  = 0xFF - high_value
+      high_value = from + ((( value - min ) * ( upto.to_u8 - from.to_u8) ).to_f / ( max - min ) )
+      low_value  = ColorValue.new( upto - high_value.to_u8 + from.to_u8 )
       return case @low_color
       when :red
         case @high_color
@@ -88,10 +94,20 @@ module Colors
       } if should_raise
     end
     def each
-      (min..max).each { |c| yield self[c] }
+      (min...max).each { |c| yield self[c] }
     end
     def each_with_index
-      (min..max).each { |c| yield self[c], c }
+      (min...max).each { |c| yield self[c], c }
+    end
+    def map(&block : T -> U) forall U
+      output = Array(U).new
+      each { |c| output << yield c }
+      output
+    end
+    def map_with_index(&block : T -> U) forall U
+      output = Array(U).new
+      each_with_index { |c, i| output << yield c, i }
+      output
     end
   end
 end

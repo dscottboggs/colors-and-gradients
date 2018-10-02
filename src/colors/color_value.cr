@@ -51,6 +51,10 @@ module Colors
       @value
     end
 
+    def to_f
+      @value.to_f
+    end
+
     # boolean operators
     {% for op in [:==, :>, :<, :<=, :>=] %}
     def {{op.id}}(other)
