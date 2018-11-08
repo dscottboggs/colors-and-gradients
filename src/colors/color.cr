@@ -72,5 +72,12 @@ module Colors
     def to_s
       "#" + @red.to_s + @green.to_s + @blue.to_s
     end
+
+	def to_json
+      %<"#{to_s}">
+	end
+	def to_json(builder)
+      builder.string to_s
+	end
   end
 end
