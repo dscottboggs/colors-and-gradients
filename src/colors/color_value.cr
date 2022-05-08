@@ -9,7 +9,7 @@ module Colors
   class ColorValue
     def initialize(@value : UInt8 = MIN_INTENSITY); end
 
-    def initialize( value : Int | Float | String | ColorValue )
+    def initialize( value : Int64 | Float64 | String | ColorValue )
       @value = value.to_u8
     end
 
