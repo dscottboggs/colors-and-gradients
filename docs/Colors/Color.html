@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.4.0">
+<meta name="crystal_docs.project_version" content="master-dev">
+<meta name="crystal_docs.project_name" content="colors">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="colors">
+  <title>Colors::Color - colors master-dev</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          colors
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="colors/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/AnyFloat" data-name="anyfloat">
+      <a href="../AnyFloat.html">AnyFloat</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/AnyInt" data-name="anyint">
+      <a href="../AnyInt.html">AnyInt</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/AnyNumber" data-name="anynumber">
+      <a href="../AnyNumber.html">AnyNumber</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="colors/Colors" data-name="colors">
+      <a href="../Colors.html">Colors</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="colors/Colors/Color" data-name="colors::color">
+      <a href="../Colors/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/Colors/ColorValue" data-name="colors::colorvalue">
+      <a href="../Colors/ColorValue.html">ColorValue</a>
+      
+    </li>
+  
+  <li class="parent " data-id="colors/Colors/Gradient" data-name="colors::gradient">
+      <a href="../Colors/Gradient.html">Gradient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="colors/Colors/Gradient/SameColor" data-name="colors::gradient::samecolor">
+      <a href="../Colors/Gradient/SameColor.html">SameColor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="colors/Colors/ValidColor" data-name="colors::validcolor">
+      <a href="../Colors/ValidColor.html">ValidColor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Colors::Color
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Colors/Color.html">Colors::Color</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      colors/color.cr
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_s%28string%3AString%29%3AColor-class-method" class="signature"><strong>.from_s</strong>(string : String) : Color</a>
+        
+          <div class="summary"><p>Accepts a string like &quot;#RRGGBB&quot;, returns a new Color.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pullparser%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull parser : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28red%3AAnyNumber%7CColorValue%3DColorValue.off%2Cgreen%3AAnyNumber%7CColorValue%3DColorValue.off%2Cblue%3AAnyNumber%7CColorValue%3DColorValue.off%29-class-method" class="signature"><strong>.new</strong>(red : AnyNumber | ColorValue = <span class="t">ColorValue</span>.off, green : AnyNumber | ColorValue = <span class="t">ColorValue</span>.off, blue : AnyNumber | ColorValue = <span class="t">ColorValue</span>.off)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#black-class-method" class="signature"><strong>.black</strong></a>
+        
+          <div class="summary"><p>A zero <code><a href="../Colors/Color.html">Color</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blue%28intensity%3AAnyNumber%7CColorValue%3DColorValue.full%29-class-method" class="signature"><strong>.blue</strong>(intensity : AnyNumber | ColorValue = <span class="t">ColorValue</span>.full)</a>
+        
+          <div class="summary"><p>A <code><a href="../Colors/Color.html">Color</a></code> with <code>@blue</code> set to the given value and the other colors off.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gray%28intensity%3AAnyNumber%7CColorValue%3DColorValue.new%28136%29%29-class-method" class="signature"><strong>.gray</strong>(intensity : AnyNumber | ColorValue = <span class="t">ColorValue</span>.<span class="k">new</span>(<span class="n">136</span>))</a>
+        
+          <div class="summary"><p>A <code><a href="../Colors/Color.html">Color</a></code> where each primary color's value is equal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#green%28intensity%3AAnyNumber%7CColorValue%3DColorValue.full%29-class-method" class="signature"><strong>.green</strong>(intensity : AnyNumber | ColorValue = <span class="t">ColorValue</span>.full)</a>
+        
+          <div class="summary"><p>A <code><a href="../Colors/Color.html">Color</a></code> with <code>@green</code> set to the given value and the other colors off.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#grey%28intensity%3AAnyNumber%7CColorValue%3DColorValue.new%28136%29%29-class-method" class="signature"><strong>.grey</strong>(intensity : AnyNumber | ColorValue = <span class="t">ColorValue</span>.<span class="k">new</span>(<span class="n">136</span>))</a>
+        
+          <div class="summary"><p>A <code><a href="../Colors/Color.html">Color</a></code> where each primary color's value is equal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random-class-method" class="signature"><strong>.random</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#red%28intensity%3AAnyNumber%7CColorValue%3DColorValue.full%29-class-method" class="signature"><strong>.red</strong>(intensity : AnyNumber | ColorValue = <span class="t">ColorValue</span>.full)</a>
+        
+          <div class="summary"><p>A <code><a href="../Colors/Color.html">Color</a></code> with <code>@red</code> set to the given value and the other colors off.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#white-class-method" class="signature"><strong>.white</strong></a>
+        
+          <div class="summary"><p>A <code><a href="../Colors/Color.html">Color</a></code> with all values set to the maximum.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#zero-class-method" class="signature"><strong>.zero</strong></a>
+        
+          <div class="summary"><p>A zero <code><a href="../Colors/Color.html">Color</a></code>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#blue%3AColors%3A%3AColorValue-instance-method" class="signature"><strong>#blue</strong> : Colors::ColorValue</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blue%3D%28blue%29-instance-method" class="signature"><strong>#blue=</strong>(blue)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#colorize%28text%3AString%29-instance-method" class="signature"><strong>#colorize</strong>(text : String)</a>
+        
+          <div class="summary"><p>Return the given text as a colorized value for display in terminals.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#green%3AColors%3A%3AColorValue-instance-method" class="signature"><strong>#green</strong> : Colors::ColorValue</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#green%3D%28green%29-instance-method" class="signature"><strong>#green=</strong>(green)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#red%3AColors%3A%3AColorValue-instance-method" class="signature"><strong>#red</strong> : Colors::ColorValue</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#red%3D%28red%29-instance-method" class="signature"><strong>#red=</strong>(red)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json%28builder%29-instance-method" class="signature"><strong>#to_json</strong>(builder)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json-instance-method" class="signature"><strong>#to_json</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s-instance-method" class="signature"><strong>#to_s</strong></a>
+        
+          <div class="summary"><p>Return the standard <code>#XXXXXX</code> hexadecimal representation of this <code><a href="../Colors/Color.html">Color</a></code></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="from_s(string:String):Color-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_s</strong>(string : String) : <a href="../Colors/Color.html">Color</a>
+
+        <a class="method-permalink" href="#from_s%28string%3AString%29%3AColor-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Accepts a string like &quot;#RRGGBB&quot;, returns a new Color. Raises an exception
+if the string is not in that format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pullparser:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull parser : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pullparser%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(red:AnyNumber|ColorValue=ColorValue.off,green:AnyNumber|ColorValue=ColorValue.off,blue:AnyNumber|ColorValue=ColorValue.off)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(red : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.off, green : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.off, blue : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.off)
+
+        <a class="method-permalink" href="#new%28red%3AAnyNumber%7CColorValue%3DColorValue.off%2Cgreen%3AAnyNumber%7CColorValue%3DColorValue.off%2Cblue%3AAnyNumber%7CColorValue%3DColorValue.off%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="black-class-method">
+      <div class="signature">
+        
+        def self.<strong>black</strong>
+
+        <a class="method-permalink" href="#black-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A zero <code><a href="../Colors/Color.html">Color</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blue(intensity:AnyNumber|ColorValue=ColorValue.full)-class-method">
+      <div class="signature">
+        
+        def self.<strong>blue</strong>(intensity : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.full)
+
+        <a class="method-permalink" href="#blue%28intensity%3AAnyNumber%7CColorValue%3DColorValue.full%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A <code><a href="../Colors/Color.html">Color</a></code> with <code>@blue</code> set to the given value and the other colors off.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gray(intensity:AnyNumber|ColorValue=ColorValue.new(136))-class-method">
+      <div class="signature">
+        
+        def self.<strong>gray</strong>(intensity : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.<span class="k">new</span>(<span class="n">136</span>))
+
+        <a class="method-permalink" href="#gray%28intensity%3AAnyNumber%7CColorValue%3DColorValue.new%28136%29%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A <code><a href="../Colors/Color.html">Color</a></code> where each primary color's value is equal.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="green(intensity:AnyNumber|ColorValue=ColorValue.full)-class-method">
+      <div class="signature">
+        
+        def self.<strong>green</strong>(intensity : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.full)
+
+        <a class="method-permalink" href="#green%28intensity%3AAnyNumber%7CColorValue%3DColorValue.full%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A <code><a href="../Colors/Color.html">Color</a></code> with <code>@green</code> set to the given value and the other colors off.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="grey(intensity:AnyNumber|ColorValue=ColorValue.new(136))-class-method">
+      <div class="signature">
+        
+        def self.<strong>grey</strong>(intensity : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.<span class="k">new</span>(<span class="n">136</span>))
+
+        <a class="method-permalink" href="#grey%28intensity%3AAnyNumber%7CColorValue%3DColorValue.new%28136%29%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A <code><a href="../Colors/Color.html">Color</a></code> where each primary color's value is equal.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random-class-method">
+      <div class="signature">
+        
+        def self.<strong>random</strong>
+
+        <a class="method-permalink" href="#random-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="red(intensity:AnyNumber|ColorValue=ColorValue.full)-class-method">
+      <div class="signature">
+        
+        def self.<strong>red</strong>(intensity : <a href="../AnyNumber.html">AnyNumber</a> | <a href="../Colors/ColorValue.html">ColorValue</a> = <span class="t">ColorValue</span>.full)
+
+        <a class="method-permalink" href="#red%28intensity%3AAnyNumber%7CColorValue%3DColorValue.full%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A <code><a href="../Colors/Color.html">Color</a></code> with <code>@red</code> set to the given value and the other colors off.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="white-class-method">
+      <div class="signature">
+        
+        def self.<strong>white</strong>
+
+        <a class="method-permalink" href="#white-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A <code><a href="../Colors/Color.html">Color</a></code> with all values set to the maximum.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="zero-class-method">
+      <div class="signature">
+        
+        def self.<strong>zero</strong>
+
+        <a class="method-permalink" href="#zero-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A zero <code><a href="../Colors/Color.html">Color</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="blue:Colors::ColorValue-instance-method">
+      <div class="signature">
+        
+        def <strong>blue</strong> : <a href="../Colors/ColorValue.html">Colors::ColorValue</a>
+
+        <a class="method-permalink" href="#blue%3AColors%3A%3AColorValue-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blue=(blue)-instance-method">
+      <div class="signature">
+        
+        def <strong>blue=</strong>(blue)
+
+        <a class="method-permalink" href="#blue%3D%28blue%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="colorize(text:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>colorize</strong>(text : String)
+
+        <a class="method-permalink" href="#colorize%28text%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return the given text as a colorized value for display in terminals.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="green:Colors::ColorValue-instance-method">
+      <div class="signature">
+        
+        def <strong>green</strong> : <a href="../Colors/ColorValue.html">Colors::ColorValue</a>
+
+        <a class="method-permalink" href="#green%3AColors%3A%3AColorValue-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="green=(green)-instance-method">
+      <div class="signature">
+        
+        def <strong>green=</strong>(green)
+
+        <a class="method-permalink" href="#green%3D%28green%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="red:Colors::ColorValue-instance-method">
+      <div class="signature">
+        
+        def <strong>red</strong> : <a href="../Colors/ColorValue.html">Colors::ColorValue</a>
+
+        <a class="method-permalink" href="#red%3AColors%3A%3AColorValue-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="red=(red)-instance-method">
+      <div class="signature">
+        
+        def <strong>red=</strong>(red)
+
+        <a class="method-permalink" href="#red%3D%28red%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json(builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>(builder)
+
+        <a class="method-permalink" href="#to_json%28builder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>
+
+        <a class="method-permalink" href="#to_json-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>
+
+        <a class="method-permalink" href="#to_s-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return the standard <code>#XXXXXX</code> hexadecimal representation of this <code><a href="../Colors/Color.html">Color</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

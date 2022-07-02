@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.4.0">
+<meta name="crystal_docs.project_version" content="master-dev">
+<meta name="crystal_docs.project_name" content="colors">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="colors">
+  <title>Colors::Gradient - colors master-dev</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          colors
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="colors/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/AnyFloat" data-name="anyfloat">
+      <a href="../AnyFloat.html">AnyFloat</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/AnyInt" data-name="anyint">
+      <a href="../AnyInt.html">AnyInt</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/AnyNumber" data-name="anynumber">
+      <a href="../AnyNumber.html">AnyNumber</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="colors/Colors" data-name="colors">
+      <a href="../Colors.html">Colors</a>
+      
+        <ul>
+  
+  <li class=" " data-id="colors/Colors/Color" data-name="colors::color">
+      <a href="../Colors/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="colors/Colors/ColorValue" data-name="colors::colorvalue">
+      <a href="../Colors/ColorValue.html">ColorValue</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="colors/Colors/Gradient" data-name="colors::gradient">
+      <a href="../Colors/Gradient.html">Gradient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="colors/Colors/Gradient/SameColor" data-name="colors::gradient::samecolor">
+      <a href="../Colors/Gradient/SameColor.html">SameColor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="colors/Colors/ValidColor" data-name="colors::validcolor">
+      <a href="../Colors/ValidColor.html">ValidColor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Colors::Gradient
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Colors/Gradient.html">Colors::Gradient</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Enumerable(<a href="../Colors/Color.html">Colors::Color</a>)</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      colors/gradient.cr
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28low_color%3AValidColor%3D%3Ared%2Chigh_color%3AValidColor%3D%3Agreen%2Cfrom%3AColorValue%7CUInt8%3DColorValue.off%2Cupto%3AColorValue%7CUInt8%3DColorValue.full%2Cmax%3D100_i64%29-class-method" class="signature"><strong>.new</strong>(low_color : ValidColor = <span class="n">:red</span>, high_color : ValidColor = <span class="n">:green</span>, from : ColorValue | UInt8 = <span class="t">ColorValue</span>.off, upto : ColorValue | UInt8 = <span class="t">ColorValue</span>.full, max = <span class="n">100_i64</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28range%3ARange%28Int64%2CInt64%29%2Clow_color%3AValidColor%3D%3Ared%2Chigh_color%3AValidColor%3D%3Agreen%2Cfrom%3AColorValue%7CUInt8%3DColorValue.off%2Cupto%3AColorValue%7CUInt8%3DColorValue.full%29-class-method" class="signature"><strong>.new</strong>(range : Range(Int64, Int64), low_color : ValidColor = <span class="n">:red</span>, high_color : ValidColor = <span class="n">:green</span>, from : ColorValue | UInt8 = <span class="t">ColorValue</span>.off, upto : ColorValue | UInt8 = <span class="t">ColorValue</span>.full)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28val%29%3AColor-instance-method" class="signature"><strong>#[]</strong>(val) : Color</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#check_colors-instance-method" class="signature"><strong>#check_colors</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each%28%26%29-instance-method" class="signature"><strong>#each</strong>(&)</a>
+        
+          <div class="summary"><p>Must yield this collection's elements to the block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#from%3AColors%3A%3AColorValue%7CUInt8-instance-method" class="signature"><strong>#from</strong> : Colors::ColorValue | UInt8</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#from%3D%28from%29-instance-method" class="signature"><strong>#from=</strong>(from)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#high_color%3AColors%3A%3AValidColor-instance-method" class="signature"><strong>#high_color</strong> : Colors::ValidColor</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#low_color%3AColors%3A%3AValidColor-instance-method" class="signature"><strong>#low_color</strong> : Colors::ValidColor</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max%3AInt64-instance-method" class="signature"><strong>#max</strong> : Int64</a>
+        
+          <div class="summary"><p>Returns the element with the maximum value in the collection.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max%3D%28max%29-instance-method" class="signature"><strong>#max=</strong>(max)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#min%3AInt64-instance-method" class="signature"><strong>#min</strong> : Int64</a>
+        
+          <div class="summary"><p>Returns the element with the minimum value in the collection.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#min%3D%28min%29-instance-method" class="signature"><strong>#min=</strong>(min)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#range%3ARange%28Int64%2CInt64%29-instance-method" class="signature"><strong>#range</strong> : Range(Int64, Int64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#range%3D%28range%3ARange%28Int64%2CInt64%29%29-instance-method" class="signature"><strong>#range=</strong>(range : Range(Int64, Int64))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#upto%3AColors%3A%3AColorValue%7CUInt8-instance-method" class="signature"><strong>#upto</strong> : Colors::ColorValue | UInt8</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#upto%3D%28upto%29-instance-method" class="signature"><strong>#upto=</strong>(upto)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(low_color:ValidColor=:red,high_color:ValidColor=:green,from:ColorValue|UInt8=ColorValue.off,upto:ColorValue|UInt8=ColorValue.full,max=100_i64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(low_color : <a href="../Colors/ValidColor.html">ValidColor</a> = <span class="n">:red</span>, high_color : <a href="../Colors/ValidColor.html">ValidColor</a> = <span class="n">:green</span>, from : <a href="../Colors/ColorValue.html">ColorValue</a> | UInt8 = <span class="t">ColorValue</span>.off, upto : <a href="../Colors/ColorValue.html">ColorValue</a> | UInt8 = <span class="t">ColorValue</span>.full, max = <span class="n">100_i64</span>)
+
+        <a class="method-permalink" href="#new%28low_color%3AValidColor%3D%3Ared%2Chigh_color%3AValidColor%3D%3Agreen%2Cfrom%3AColorValue%7CUInt8%3DColorValue.off%2Cupto%3AColorValue%7CUInt8%3DColorValue.full%2Cmax%3D100_i64%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(range:Range(Int64,Int64),low_color:ValidColor=:red,high_color:ValidColor=:green,from:ColorValue|UInt8=ColorValue.off,upto:ColorValue|UInt8=ColorValue.full)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(range : Range(Int64, Int64), low_color : <a href="../Colors/ValidColor.html">ValidColor</a> = <span class="n">:red</span>, high_color : <a href="../Colors/ValidColor.html">ValidColor</a> = <span class="n">:green</span>, from : <a href="../Colors/ColorValue.html">ColorValue</a> | UInt8 = <span class="t">ColorValue</span>.off, upto : <a href="../Colors/ColorValue.html">ColorValue</a> | UInt8 = <span class="t">ColorValue</span>.full)
+
+        <a class="method-permalink" href="#new%28range%3ARange%28Int64%2CInt64%29%2Clow_color%3AValidColor%3D%3Ared%2Chigh_color%3AValidColor%3D%3Agreen%2Cfrom%3AColorValue%7CUInt8%3DColorValue.off%2Cupto%3AColorValue%7CUInt8%3DColorValue.full%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="[](val):Color-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(val) : <a href="../Colors/Color.html">Color</a>
+
+        <a class="method-permalink" href="#%5B%5D%28val%29%3AColor-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="check_colors-instance-method">
+      <div class="signature">
+        
+        def <strong>check_colors</strong>
+
+        <a class="method-permalink" href="#check_colors-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each(&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>(&)
+
+        <a class="method-permalink" href="#each%28%26%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Enumerable(<a href="../Colors/Color.html">Colors::Color</a>)
+            </div>
+          
+          <p>Must yield this collection's elements to the block.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="from:Colors::ColorValue|UInt8-instance-method">
+      <div class="signature">
+        
+        def <strong>from</strong> : <a href="../Colors/ColorValue.html">Colors::ColorValue</a> | UInt8
+
+        <a class="method-permalink" href="#from%3AColors%3A%3AColorValue%7CUInt8-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="from=(from)-instance-method">
+      <div class="signature">
+        
+        def <strong>from=</strong>(from)
+
+        <a class="method-permalink" href="#from%3D%28from%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="high_color:Colors::ValidColor-instance-method">
+      <div class="signature">
+        
+        def <strong>high_color</strong> : <a href="../Colors/ValidColor.html">Colors::ValidColor</a>
+
+        <a class="method-permalink" href="#high_color%3AColors%3A%3AValidColor-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="low_color:Colors::ValidColor-instance-method">
+      <div class="signature">
+        
+        def <strong>low_color</strong> : <a href="../Colors/ValidColor.html">Colors::ValidColor</a>
+
+        <a class="method-permalink" href="#low_color%3AColors%3A%3AValidColor-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>max</strong> : Int64
+
+        <a class="method-permalink" href="#max%3AInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Enumerable(<a href="../Colors/Color.html">Colors::Color</a>)
+            </div>
+          
+          <p>Returns the element with the maximum value in the collection.</p>
+<p>It compares using <code>&gt;</code> so it will work for any type that supports that method.</p>
+<pre><code class="language-crystal">[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>].max        <span class="c"># =&gt; 3</span>
+[<span class="s">&quot;Alice&quot;</span>, <span class="s">&quot;Bob&quot;</span>].max <span class="c"># =&gt; &quot;Bob&quot;</span></code></pre>
+<p>Raises <code>Enumerable::EmptyError</code> if the collection is empty.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max=(max)-instance-method">
+      <div class="signature">
+        
+        def <strong>max=</strong>(max)
+
+        <a class="method-permalink" href="#max%3D%28max%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="min:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>min</strong> : Int64
+
+        <a class="method-permalink" href="#min%3AInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Enumerable(<a href="../Colors/Color.html">Colors::Color</a>)
+            </div>
+          
+          <p>Returns the element with the minimum value in the collection.</p>
+<p>It compares using <code>&lt;</code> so it will work for any type that supports that method.</p>
+<pre><code class="language-crystal">[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>].min        <span class="c"># =&gt; 1</span>
+[<span class="s">&quot;Alice&quot;</span>, <span class="s">&quot;Bob&quot;</span>].min <span class="c"># =&gt; &quot;Alice&quot;</span></code></pre>
+<p>Raises <code>Enumerable::EmptyError</code> if the collection is empty.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="min=(min)-instance-method">
+      <div class="signature">
+        
+        def <strong>min=</strong>(min)
+
+        <a class="method-permalink" href="#min%3D%28min%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="range:Range(Int64,Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>range</strong> : Range(Int64, Int64)
+
+        <a class="method-permalink" href="#range%3ARange%28Int64%2CInt64%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="range=(range:Range(Int64,Int64))-instance-method">
+      <div class="signature">
+        
+        def <strong>range=</strong>(range : Range(Int64, Int64))
+
+        <a class="method-permalink" href="#range%3D%28range%3ARange%28Int64%2CInt64%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="upto:Colors::ColorValue|UInt8-instance-method">
+      <div class="signature">
+        
+        def <strong>upto</strong> : <a href="../Colors/ColorValue.html">Colors::ColorValue</a> | UInt8
+
+        <a class="method-permalink" href="#upto%3AColors%3A%3AColorValue%7CUInt8-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="upto=(upto)-instance-method">
+      <div class="signature">
+        
+        def <strong>upto=</strong>(upto)
+
+        <a class="method-permalink" href="#upto%3D%28upto%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

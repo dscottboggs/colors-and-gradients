@@ -3,6 +3,9 @@
 This is a library focused on working with colors and gradients. At this stage
 it allows you to create an RGB gradient.
 
+### New!
+This shard now features [100% test coverage](https://dscottboggs.github.io/colors-and-gradients/coverage/index.html)
+
 ## Installation
 
 Add this to your application's `shard.yml`:
@@ -29,6 +32,8 @@ color_based_on_percent = Gradient.new :red, :green, 100
 color = color_based_on_percent[50] # => Color red: 127, green: 127, blue: 0
 color.to_s                         # => "#7F7F00"
 ```
+
+Full documentation can be found [here](https://dscottboggs.github.io/colors-and-gradients/)
 
 ## Development
 
